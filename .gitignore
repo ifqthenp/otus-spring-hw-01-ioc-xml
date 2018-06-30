@@ -1,0 +1,18 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Gradle & Intellij basic template template
+### Gradle template
+.gradle
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+### JetBrains template
+.idea/
+*.iml
+*.iws
+out/
+.idea_modules/
+
+### Anything else
+.editorconfig
