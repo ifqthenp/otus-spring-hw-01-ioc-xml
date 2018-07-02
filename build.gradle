@@ -16,7 +16,7 @@ repositories {
 
 ext {
     springVersion = '5.0.7.RELEASE'
-    openCsvVersion = '4.0'
+    openCsvVersion = '4.2'
     spockVersion = '1.1-groovy-2.4'
     junitVersion = '4.12'
 }
