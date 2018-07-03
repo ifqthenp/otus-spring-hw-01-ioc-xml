@@ -38,3 +38,7 @@ dependencies {
     // https://mvnrepository.com/artifact/junit/junit
     testCompile group: 'junit', name: 'junit', version: "$junitVersion"
 }
+
+clean {
+    delete 'out'
+}
