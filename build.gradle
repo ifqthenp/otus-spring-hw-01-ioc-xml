@@ -16,6 +16,7 @@ repositories {
 
 ext {
     springVersion = '5.0.7.RELEASE'
+    springTest = '5.0.7.RELEASE'
     openCsvVersion = '4.2'
     spockVersion = '1.1-groovy-2.4'
     junitVersion = '4.12'
@@ -24,6 +25,9 @@ ext {
 dependencies {
     // https://mvnrepository.com/artifact/org.springframework/spring-context
     implementation group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-test
+    testCompile group: 'org.springframework', name: 'spring-test', version: "$springTest"
 
     // https://mvnrepository.com/artifact/com.opencsv/opencsv
     implementation group: 'com.opencsv', name: 'opencsv', version: "$openCsvVersion"
