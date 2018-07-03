@@ -44,6 +44,10 @@ dependencies {
     testCompile "junit:junit:$junitVersion"
 }
 
+/* ************************************************************************** */
+/*                            Custom Task Configuration                       */
+/* ************************************************************************** */
+
 clean {
     delete 'out'
 }
