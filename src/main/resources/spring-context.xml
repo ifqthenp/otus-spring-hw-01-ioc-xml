@@ -4,12 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="fileService"
-          class="com.otus.spring.service.impl.FileServiceImpl"/>
+    <bean id="resourceService"
+          class="com.otus.spring.service.impl.ResourceServiceImpl"/>
 
     <bean id="csvService"
           class="com.otus.spring.service.impl.CsvServiceImpl">
-        <constructor-arg name="fileService" ref="fileService"/>
+        <constructor-arg name="resourceService" ref="resourceService"/>
     </bean>
 
     <bean id="quizzService"
