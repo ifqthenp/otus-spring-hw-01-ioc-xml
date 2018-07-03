@@ -25,24 +25,13 @@ ext {
     springTest = '5.0.7.RELEASE'
     openCsvVersion = '4.2'
     spockVersion = '1.1-groovy-2.4'
-    junitVersion = '4.12'
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.springframework/spring-context
     implementation "org.springframework:spring-context:$springVersion"
-
-    // https://mvnrepository.com/artifact/org.springframework/spring-test
     testCompile "org.springframework:spring-test:$springTest"
-
-    // https://mvnrepository.com/artifact/com.opencsv/opencsv
     implementation "com.opencsv:opencsv:$openCsvVersion"
-
-    // https://mvnrepository.com/artifact/org.spockframework/spock-core
     testCompile "org.spockframework:spock-core:$spockVersion"
-
-    // https://mvnrepository.com/artifact/junit/junit
-    testCompile "junit:junit:$junitVersion"
 }
 
 /* ************************************************************************** */
@@ -75,3 +64,9 @@ task fatJar(type: Jar) {
     }
     with jar
 }
+
+/* ************************************************************************** */
+/*                            Docker Plugin Config                            */
+/* ************************************************************************** */
+
+
