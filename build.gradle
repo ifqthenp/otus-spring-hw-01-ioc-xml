@@ -10,6 +10,11 @@ version '1.0.0'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+
+/* ************************************************************************** */
+/*                         Dependencies Configuration                         */
+/* ************************************************************************** */
+
 repositories {
     jcenter()
 }
@@ -24,19 +29,19 @@ ext {
 
 dependencies {
     // https://mvnrepository.com/artifact/org.springframework/spring-context
-    implementation group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+    implementation "org.springframework:spring-context:$springVersion"
 
     // https://mvnrepository.com/artifact/org.springframework/spring-test
-    testCompile group: 'org.springframework', name: 'spring-test', version: "$springTest"
+    testCompile "org.springframework:spring-test:$springTest"
 
     // https://mvnrepository.com/artifact/com.opencsv/opencsv
-    implementation group: 'com.opencsv', name: 'opencsv', version: "$openCsvVersion"
+    implementation "com.opencsv:opencsv:$openCsvVersion"
 
     // https://mvnrepository.com/artifact/org.spockframework/spock-core
-    testCompile group: 'org.spockframework', name: 'spock-core', version: "$spockVersion"
+    testCompile "org.spockframework:spock-core:$spockVersion"
 
     // https://mvnrepository.com/artifact/junit/junit
-    testCompile group: 'junit', name: 'junit', version: "$junitVersion"
+    testCompile "junit:junit:$junitVersion"
 }
 
 clean {
