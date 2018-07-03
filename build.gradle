@@ -51,3 +51,26 @@ dependencies {
 clean {
     delete 'out'
 }
+
+/* ************************************************************************** */
+/*                          Executable Jar configuration                      */
+/* ************************************************************************** */
+
+project.mainClassName = "com.otus.spring.main.App"
+
+task fatJar(type: Jar) {
+    archiveName = "otus-spring-hw-01-fatjar.${extension}"
+    manifest {
+        attributes(
+            "Implementation-Title": "Otus Spring 06/2018",
+            "Implementation-Version": version,
+            "Main-Class": mainClassName
+        )
+    }
+    from {
+        configurations.compileClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    with jar
+}
