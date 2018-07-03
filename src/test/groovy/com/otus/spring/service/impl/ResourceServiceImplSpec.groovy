@@ -1,24 +1,24 @@
 package com.otus.spring.service.impl
 
-import com.otus.spring.service.CsvUrlService
+import com.otus.spring.service.ResourceService
 import spock.lang.Specification
 
-class CsvUrlServiceImplSpec extends Specification {
+class ResourceServiceImplSpec extends Specification {
 
-    CsvUrlService fileService
+    ResourceService resourceService
 
     void setup() {
-        fileService = new CsvUrlServiceImpl()
-        assert fileService.csvURL != null
+        resourceService = new ResourceServiceImpl()
+        assert resourceService.csvURL != null
     }
 
     def "getCsvURL() method returns URL reference type"() {
         expect:
-        fileService.csvURL.getClass() in URL.class
+        resourceService.csvURL.getClass() in URL.class
     }
 
-    def "FileService returns csv file with 'quiz.csv' name"() {
+    def "ResourceService returns csv file with 'quiz.csv' name"() {
         expect:
-        new File(fileService.csvURL.file).name == 'quiz.csv'
+        new File(resourceService.csvURL.file).name == 'quiz.csv'
     }
 }

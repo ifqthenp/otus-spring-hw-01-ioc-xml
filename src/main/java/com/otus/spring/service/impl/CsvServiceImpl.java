@@ -4,19 +4,20 @@ import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.otus.spring.domain.Quiz;
 import com.otus.spring.service.CsvService;
-import com.otus.spring.service.FileService;
+import com.otus.spring.service.ResourceService;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 
 public class CsvServiceImpl implements CsvService
 {
-    private FileService fileService;
+    private ResourceService resourceService;
 
-    public CsvServiceImpl(final FileService fileService)
+    public CsvServiceImpl(final ResourceService resourceService)
     {
-        this.fileService = fileService;
+        this.resourceService = resourceService;
     }
 
     @Override
@@ -24,9 +25,9 @@ public class CsvServiceImpl implements CsvService
     {
         CSVReader csvReader = null;
         try {
-            csvReader = new CSVReader(new FileReader(fileService.getCsvFile()));
+            csvReader = new CSVReader(new BufferedReader(new InputStreamReader(resourceService.getCsvURL().openStream())));
         }
-        catch (FileNotFoundException e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
         return csvReader;
@@ -37,10 +38,10 @@ public class CsvServiceImpl implements CsvService
     {
         List<Quiz> beans = null;
         try {
-            beans = new CsvToBeanBuilder<Quiz>(new FileReader(fileService.getCsvFile()))
+            beans = new CsvToBeanBuilder<Quiz>(new BufferedReader(new InputStreamReader(resourceService.getCsvURL().openStream())))
                     .withType(Quiz.class).build().parse();
         }
-        catch (FileNotFoundException e) {
+        catch (IOException e) {
             e.printStackTrace();
         }
         return beans;

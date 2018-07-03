@@ -2,7 +2,7 @@ package com.otus.spring.service.impl
 
 import com.opencsv.CSVReader
 import com.otus.spring.service.CsvService
-import com.otus.spring.service.FileService
+import com.otus.spring.service.ResourceService
 import spock.lang.Specification
 
 /**
@@ -11,11 +11,11 @@ import spock.lang.Specification
 class CsvServiceImplSpec extends Specification {
 
     CsvService csvService
-    FileService fileService
+    ResourceService resourceService
 
     void setup() {
-        fileService = new FileServiceImpl()
-        csvService = new CsvServiceImpl(fileService)
+        resourceService = new ResourceServiceImpl()
+        csvService = new CsvServiceImpl(resourceService)
         assert csvService.csvReader != null
     }
 

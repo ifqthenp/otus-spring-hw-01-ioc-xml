@@ -1,10 +1,10 @@
 package com.otus.spring.service.impl;
 
-import com.otus.spring.service.CsvUrlService;
+import com.otus.spring.service.ResourceService;
 
 import java.net.URL;
 
-public class CsvUrlServiceImpl implements CsvUrlService
+public class ResourceServiceImpl implements ResourceService
 {
     private static final String CSV_RESOURCE = "quiz.csv";
 
