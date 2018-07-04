@@ -16,7 +16,7 @@ calculate the resulting score.
 Each service must solve a specific task. Dependencies must be configured in IoC
 container.
 
-Optional: cover services with tests
+_Optional_: cover services with tests
 
 ## How to get the project running
 
