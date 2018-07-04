@@ -24,8 +24,8 @@ public class CsvServiceImpl implements CsvService
     public CSVReader getCsvReader()
     {
         CSVReader csvReader = null;
-        try {
-            csvReader = new CSVReader(new BufferedReader(new InputStreamReader(resourceService.getCsvURL().openStream())));
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(resourceService.getCsvURL().openStream()))) {
+            csvReader = new CSVReader(br);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -37,9 +37,8 @@ public class CsvServiceImpl implements CsvService
     public List<Quiz> getQuizList()
     {
         List<Quiz> beans = null;
-        try {
-            beans = new CsvToBeanBuilder<Quiz>(new BufferedReader(new InputStreamReader(resourceService.getCsvURL().openStream())))
-                    .withType(Quiz.class).build().parse();
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(resourceService.getCsvURL().openStream()))) {
+            beans = new CsvToBeanBuilder<Quiz>(br).withType(Quiz.class).build().parse();
         }
         catch (IOException e) {
             e.printStackTrace();
