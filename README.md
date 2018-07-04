@@ -17,3 +17,35 @@ Each service must solve a specific task. Dependencies must be configured in IoC
 container.
 
 Optional: cover services with tests
+
+## How to get the project running
+
+Clone repository from GitHub:
+
+```shell
+git clone git@github.com:ifqthenp/otus-spring-hw-01-ioc-xml.git
+```
+
+Change into the folder with:
+
+```shell
+cd otus-spring-hw-01-ioc-xml
+```
+
+Make `gradlew` script executable (or use `gradlew.bat` if running on Windows):
+
+```shell
+chmod +x gradlew 
+```
+
+Build executable `jar`:
+
+```shell
+./gradlew clean fatJar
+```
+
+Run the program:
+
+```shell
+java -jar build/libs/otus-spring-hw-01-fatjar.jar
+```
