@@ -1,13 +1,9 @@
 package com.otus.spring.service.impl
 
-import com.opencsv.CSVReader
 import com.otus.spring.service.CsvService
 import com.otus.spring.service.ResourceService
 import spock.lang.Specification
 
-/**
- * {@code CsvServiceImplSpec} class.
- */
 class CsvServiceImplSpec extends Specification {
 
     CsvService csvService
@@ -16,11 +12,11 @@ class CsvServiceImplSpec extends Specification {
     void setup() {
         resourceService = new ResourceServiceImpl()
         csvService = new CsvServiceImpl(resourceService)
-        assert csvService.csvReader != null
+        assert csvService != null
     }
 
-    def "getCsvReader() method returns CSVReader reference type"() {
+    def "getQuizList() method returns ArrayList reference type"() {
         expect:
-        csvService.csvReader.getClass() in CSVReader.class
+        csvService.quizList.getClass() in ArrayList.class
     }
 }
