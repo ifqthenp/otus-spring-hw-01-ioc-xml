@@ -23,7 +23,7 @@ public class QuizServiceImpl implements QuizService
     public void run()
     {
         try (Scanner in = new Scanner(System.in)) {
-            System.out.print("Please enter your name: ");
+            System.out.print("\nPlease enter your name: ");
             String userName = in.nextLine();
             System.out.println("Hello " + userName + ", please read the question" +
                     "\nand select from the following options:");
