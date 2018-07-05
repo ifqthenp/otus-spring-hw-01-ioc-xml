@@ -1,6 +1,5 @@
 package com.otus.spring.service.impl;
 
-import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.otus.spring.domain.Quiz;
 import com.otus.spring.service.CsvService;
@@ -18,19 +17,6 @@ public class CsvServiceImpl implements CsvService
     public CsvServiceImpl(final ResourceService resourceService)
     {
         this.resourceService = resourceService;
-    }
-
-    @Override
-    public CSVReader getCsvReader()
-    {
-        CSVReader csvReader = null;
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(resourceService.getCsvURL().openStream()))) {
-            csvReader = new CSVReader(br);
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        return csvReader;
     }
 
     @Override

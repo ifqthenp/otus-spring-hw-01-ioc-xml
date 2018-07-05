@@ -7,7 +7,5 @@ import java.util.List;
 
 public interface CsvService
 {
-    CSVReader getCsvReader();
-
     List<Quiz> getQuizList();
 }
